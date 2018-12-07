@@ -12,7 +12,7 @@ public class Binary_Gap_868 {
     public int binaryGap(int N) {
         String binaryString = Integer.toBinaryString(N);
         int start = -1;
-        int end = -1;
+        int end;
         boolean isFirstOne = true;
         int maxDistance = 0;
         for (int i = 0; i < binaryString.length(); i++) {
@@ -37,6 +37,6 @@ public class Binary_Gap_868 {
     @Test
     public void test() {
         int result = binaryGap(5);
-        Assert.assertEquals(result, 2);
+        Assert.assertEquals(2, result);
     }
 }
