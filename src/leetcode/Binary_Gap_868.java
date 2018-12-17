@@ -1,9 +1,10 @@
-package gaoby;
+package leetcode;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * Binary_Gap
  * @author shaoping
  * @date 2018/12/7
  * @url https://leetcode.com/problems/binary-gap/
