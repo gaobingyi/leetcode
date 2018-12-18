@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * Binary_Gap
- * @author shaoping
+ * @author gaoby
  * @date 2018/12/7
  * @url https://leetcode.com/problems/binary-gap/
  */
