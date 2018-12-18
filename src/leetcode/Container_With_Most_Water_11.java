@@ -30,9 +30,27 @@ public class Container_With_Most_Water_11 {
         int low = 0;
         int high = height.length - 1;
         while (low < high) {
-        	int min = Math.min(height[low], height[high]);
-        	int area = (high - low) / min;
-        	
+        	int area = 0;
+        	if (height[low] < height[high]) {
+        		if (height[low] != 0) {
+        			area = (high - low) / height[low];
+        		}
+        		low++;
+        	} else if (height[low] > height[high]) {
+        		if (height[high] != 0) {
+        			area = (high - low) / height[high];
+        		}
+        		high--;
+        	} else {
+        		area = (high - low) / height[high];
+        		if (area > maxArea) {
+            		maxArea = area;
+            	}
+        		break;
+        	}
+        	if (area > maxArea) {
+        		maxArea = area;
+        	}
         }
         return maxArea;
     }
@@ -40,13 +58,7 @@ public class Container_With_Most_Water_11 {
 	@Test
     public void test() {
 		int[] input = {1,8,6,2,5,4,8,3,7};
-        int result = maxArea(input);
+        int result = maxArea2(input);
         Assert.assertEquals(49, result);
     }
-	
-	@Test
-	public void test2() {
-		boolean flag = Pattern.matches("^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$", "shaoping@pinduoduo..com");
-		System.out.println(flag);
-	}
 }
